@@ -1,25 +1,28 @@
 from bottle import *
 from beaker.middleware import SessionMiddleware
-hotels =[
-    {
-        'name':'Reykavik',
-        'postcode': 101,
-        'folder': 'HotelRK',
-        'border': 'bannerRK.jpg'
-    },
-    {
-        'name':'Akureyri',
-        'postcode': 600,
-        'folder': 'HotelAK',
-        'border': 'bannerAK.jpg'
-    },
-    {
-        'name':'Selfoss',
-        'postcode': 800,
-        'folder': 'HotelSE',
-        'border': 'bannerSE.jpg'
-    }
-]
+from Database.HotelConnect import *
+Common = CommonPS()
+Customer = Customer()
+Address = Address()
+
+# Upsetning á hótelum
+result = Common.HotelAbout()
+hotels = list()
+for i in result:
+    item = dict()
+    item['name'] = i[2]
+    item['postcode'] = i[4]
+    item['folder'] = i[5].lower()
+    item['border'] = str(i[5].lower() + '.jpg')
+    hotels.append(item)
+for i in hotels:
+    print(i)
+
+
+
+
+
+
 cookei = ['account', 'fname', 'lname', 'SSN', 'phone', 'mail', 'checkin', 'checkout', 'herbegi']
 account = {'user':'nonni2000','passwd':'nonni','fname':'Nonni','lname':'Manni','SSN':'4567892345','simi':'5678903','mail':'manni@gmail.com'}
 
