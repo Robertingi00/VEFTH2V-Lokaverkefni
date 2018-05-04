@@ -15,24 +15,46 @@
     <div class="navbar">
       <div class="box"><img src="/static/img/mynd.png" style="width: 82px;"></div>
       <div class="box2"><ul><li><a href="#viðburðir">Viðburðir</a></li><li><a href="#staff">Starfsfólk</a></li><li><a href="#umokkuer">Um okkur</a></li><li><a href="#pnata">Panta</a></li</ul></div>
-      <div class="box3"><h1>Velkominn á síðuna hjá Hraun Hótel</h1><p class="text">Við erum með 3 hótel sem eru staðsett á Íslandi. 70 herbergja í Reykjavík, 45 herbergja á Akureyri, 35 herbergja á Selfossi.</p><p class="text2">Það er hægt að pnata ferðir á Hótelunum, boði eru reyðtúrar, jökklaferðir, hvalaleiðangrar, fjöllgöngur og mikklu fleira.</p></div>
+      <div class="box3"><h1 style="margin-bottom: .2em">Hraun Hótel</h1><h1 style="margin-top: .2em;">{{hotel['name']}}</h1></div>
     </div>
-    <img src="/static/img/HotelAK/bannerAK.jpg">
+    <img src="/static/img/{{hotel['folder']}}/{{hotel['border']}}">
   </header>
-  <div class="wrapper-index">
+  <div class="wrapper-index-hotel">
 
   <div class="box4">
+    <form action="{{hotel['name']}}/orde">
     <div class="stadir">
-      <div><a href="/Hotel/Reykavik">Reykjavík</a></div>
-      <div><a href="/Hotel/Akureyri">Akureyri</a></div>
-      <div><a href="/Hotel/Selfoss">Selfoss</a></div>
+        <div><label>Check in:</label><input id="1" type="date" name="checkin" required></div>
+        <div><label>Check out:</label><input id="2" type="date" name="ckeckout" required></div>
+        <div>
+          <label>Herbergi:</label>
+          <select name="Herbergi">
+              <option value="Guset" selected="">Guset(queen)</option>
+              <option value="Suites">Suites(queen+bead)</option>
+              <option value="Executive">Executive(King+queen)</option>
+          </select>
+        </div>
+        <div>
+          <input type="submit" name="Panta">
+        </div>
     </div>
+     </form>
   </div>
 
   <div class="wrapper-index">
     <div class="umokkur">
       <div class="myndbox">
-        <img src="/static/img/mynd.png">
+        <div class="popup">
+          <div class="imgs">
+            <img class="slides" src="/static/img/HotelRK/bannerRK.jpg">
+            <img class="slides" src="/static/img/HotelAK/bannerAK.jpg">
+            <button class="btn" onclick="plusIndex(-1)">&#10094;</button>
+            <button class="btn2" onclick="plusIndex(-1)"">&#10095;</button>
+          </div>
+          <div class="uppls">
+    
+  </div>
+</div>
       </div>
       <div class="text">
         <h1>Um okkur</h1>
@@ -64,5 +86,33 @@
  
 
 
-  
+<script type="text/javascript">
+    var index = 1;
+
+    function plusIndex(n){
+      index = index + 1;
+      showImage(index);
+    }
+
+    showImage (1);
+
+    function showImage(n){
+      var x = document.getElementsByClassName('slides');
+      if (n > x.length) {index = 1};
+      if (n < 1) { index = x.length};
+      for(i=0;i<x.length;i++)
+        {
+          x[i].style.display = "none";
+        }
+        x[index-1].style.display = 'block';
+    }
+    var checkin = document.getElementsById('1');
+    var checkout = document.getElementsById('2');
+
+    function blockcheckout(){
+      if (checkin > checkout ){checkout.style.display = "block"}
+
+    }
+</script>
+
 </body>
