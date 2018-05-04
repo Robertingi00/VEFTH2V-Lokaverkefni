@@ -55,6 +55,7 @@ def order(hotelid):
 
 @route('/Hotel/<hotelid>/order')
 def orderroom(hotelid):
+    villa = ''
 
     for x in hotels:
         print(x)
@@ -80,7 +81,7 @@ def orderroom(hotelid):
     herbergi_uppl = {'checkin':checkin,'checkout':checkout,'herbergi':herbergi}
     print(herbergi_uppl)
 
-    return template('order', hotel=temp_hotel,user=user, herbergi_uppl=herbergi_uppl,ifuser=ifuser)
+    return template('order', villa= villa,hotel=temp_hotel,user=user, herbergi_uppl=herbergi_uppl,ifuser=ifuser)
 
 @route('/Hotel/<stadur>/login', method='post')
 def login(stadur):
@@ -102,20 +103,24 @@ def login(stadur):
         return "Login failed. <br> <a href='/'>Login</a>"
 
 
-@route('/orderfinal', method='post')
+@route('/checkoreder', method='post')
 def klaraorder():
     for x in cookei:
         response.set_cookie('{}'.format(x), "", expires=0)
     username = request.forms.get('user')
+    # tékkar hvort notandi sé til ef svo þá þarf hann ekki að sækja upplýsingar um hann
+     = request.forms.get('user')
     password = request.forms.get('password')
     username = request.forms.get('user')
     password = request.forms.get('password')
-    username = request.forms.get('user')
-    password = request.forms.get('password')
     password = request.forms.get('password')
 
 
 
+
+@route('/bokun')
+def bokun():
+    return template('bokun')
 
 @route('/static/<filename:path>')
 def server_static(filename):

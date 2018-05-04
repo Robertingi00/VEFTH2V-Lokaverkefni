@@ -14,7 +14,7 @@
   <header>
     <div class="navbar">
       <div class="box"><img src="/static/img/mynd.png" style="width: 82px;"></div>
-      <div class="box2"><ul><li><a href="#viðburðir">Viðburðir</a></li><li><a href="#staff">Starfsfólk</a></li><li><a href="#umokkuer">Um okkur</a></li><li><a href="#pnata">Panta</a></li</ul></div>
+      <div class="box2"><ul><li><a href="/bokun">Sjá bókun</a></li><li><a href="/starfsmenn">Starfsfólk</a></li><li><a href="#umokkuer">Um okkur</a></li><li><a href="/Hotel/Akureyri">Akureyri</a></li><li><a href="/Hotel/Selfoss">Selfoss</a></li><li><a href="/Hotel/Reykavik">Reykavík</a></li></ul></div>
       <div class="box3"><h1>Velkominn á síðuna hjá Hraun Hótel</h1><p class="text">Við erum með 3 hótel sem eru staðsett á Íslandi. 70 herbergja í Reykjavík, 45 herbergja á Akureyri, 35 herbergja á Selfossi.</p><p class="text2">Það er hægt að pnata ferðir á Hótelunum, boði eru reyðtúrar, jökklaferðir, hvalaleiðangrar, fjöllgöngur og mikklu fleira.</p></div>
     </div>
     <img src="/static/img/HotelAK/bannerAK.jpg">

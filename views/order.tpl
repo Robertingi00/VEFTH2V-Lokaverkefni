@@ -34,10 +34,12 @@
   		</div>
   		
   	</div>
-  	<div class="alert">
-  		<span class="closebtn">&times;</span>  
-  		<strong>Villa!</strong> Hérna kemur afhverju það kom villa.
-	</div>
+  	% if len(villa) != 0:
+	  	<div class="alert">
+	  		<span class="closebtn">&times;</span>  
+	  		<strong>Villa!</strong>{{villa}}
+	  	</div>
+	% end
   	<div class="order">
   		<h1>Order</h1>
   			<div class="dalkar">
