@@ -1,5 +1,6 @@
 from bottle import *
-from beaker.middleware import SessionMiddleware
+#from beaker.middleware import SessionMiddleware
+from middleware import SessionMiddleware
 from Database.HotelConnect import *
 Common = CommonPS()
 Customer = Customer()
