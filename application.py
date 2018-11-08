@@ -1,5 +1,5 @@
 from bottle import *
-from beaker.middleware import SessionMiddleware
+#from beaker.middleware import SessionMiddleware
 from Database.HotelConnect import *
 Common = CommonPS()
 Customer = Customer()
@@ -129,12 +129,12 @@ def bokun():
 def server_static(filename):
     return static_file(filename, root='./resources')
 
-session_options = {
-    'session.type': 'file',
-    'session.data_dir':'./data'
-}
+#session_options = {
+#    'session.type': 'file',
+#    'session.data_dir':'./data'
+#}
 
-my_session = SessionMiddleware(app(), session_options)
+#my_session = SessionMiddleware(app(), session_options)
 
 #run(host='localhost', port='8080', debug='True', reloader='True')
 run(host="0.0.0.0", port=os.environ.get('PORT'))
