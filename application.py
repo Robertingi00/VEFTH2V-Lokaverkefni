@@ -1,5 +1,4 @@
 from bottle import *
-from bottle.ext import beaker
 from beaker.middleware import SessionMiddleware
 from Database.HotelConnect import *
 Common = CommonPS()
