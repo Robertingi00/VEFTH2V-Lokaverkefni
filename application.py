@@ -112,7 +112,7 @@ def klaraorder():
         response.set_cookie('{}'.format(x), "", expires=0)
     username = request.forms.get('user')
     # tékkar hvort notandi sé til ef svo þá þarf hann ekki að sækja upplýsingar um hann
-     = request.forms.get('user')
+    # = request.forms.get('user')
     password = request.forms.get('password')
     username = request.forms.get('user')
     password = request.forms.get('password')
