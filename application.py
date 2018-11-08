@@ -136,4 +136,5 @@ session_options = {
 
 my_session = SessionMiddleware(app(), session_options)
 
-run(host='localhost', port='8080', debug='True', reloader='True')
+#run(host='localhost', port='8080', debug='True', reloader='True')
+run(host="0.0.0.0", port=os.environ.get('PORT'))
